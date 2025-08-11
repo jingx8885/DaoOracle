@@ -1,0 +1,74 @@
+graph TD
+    A["开始投资决策"] --> B["设立风险政策<br/>制定投资原则"]
+    B --> C["分析投资框架<br/>选择正确视角"]
+    C --> D["评估四重模式<br/>概率与收益分析"]
+    
+   
+    
+    I --> J["破除心理账户<br/>统一资金管理"]
+    J --> K["避免处置效应<br/>卖出逻辑一致"]
+    K --> L["对抗禀赋效应<br/>客观评估持股"]
+    L --> M["管理损失厌恶<br/>接受不确定性"]
+    
+    M --> N["制定明确交易规则"]
+    N --> O["严格执行投资纪律"]
+    O --> P["定期回顾和调整"]
+    P --> Q{"业绩是否达预期"}
+    
+    Q -->|是| R["坚持当前策略"]
+    Q -->|否| S["分析偏差修正方法"]
+    
+    R --> T["实现长期复合增长"]
+    S --> B
+
+
+    graph TD
+    subgraph "第一阶段：顶层设计"
+        A["<b style='font-size:16px'>决策起点</b><br/>我需要做出一项投资决策"] --> B["<b style='font-size:16px'>采用宽框架：建立风险政策</b><br/>- 定义我的投资哲学与总原则<br/>- 将每次决策视为'众多决策之一'<br/>- 克服单次决策的损失厌恶"]
+    end
+
+    subgraph "第二阶段：机会评估"
+        B --> C["<b style='font-size:16px'>分析框架与现实</b><br/>- 识别当前决策被何种'框架'影响<br/>- 主动用'成本-收益'等理性框架重述问题"]
+        C --> D["<b style='font-size:16px'>评估四重模式</b><br/>- 判断机会属于哪种概率/盈亏组合<br/>- 识别并量化其中的感性冲动"]
+
+        D --> E1{"高概率收益<br/>稳健蓝筹股上涨"}
+        D --> F1{"低概率收益<br/>成长股暴涨机会"}
+        D --> G1{"高概率损失<br/>基本面恶化"}
+        D --> H1{"低概率损失<br/>黑天鹅事件"}
+        
+        E --> E2["理性：计算期望值继续持有<br/>感性：害怕利润回吐急于卖出"]
+        F --> F2["理性：小仓位试水投机<br/>感性：梦想暴富重仓追涨"]
+        G --> G2["理性：及时止损认错离场<br/>感性：死扛不认输继续加仓"]
+        H --> H2["理性：适度对冲分散风险<br/>感性：过度恐惧全部清仓"]
+        
+        E2 --> E
+        F2 --> E
+        G2 --> E
+        H2 --> E
+    end
+
+    subgraph "第三阶段：心理对抗"
+        D --> E["<b style='font-size:16px'>识别并克服核心心理偏差</b><br/>- <b>心理账户</b>: 钱都一样，不分你我<br/>- <b>处置效应</b>: 卖掉坏的，不是卖掉亏的<br/>- <b>禀赋效应</b>: 如果没持有，我还会买吗？"]
+    end
+
+    subgraph "第四阶段：执行与迭代"
+        E --> F["<b style='font-size:16px'>制定并执行交易纪律</b><br/>- 基于风险政策，设定具体的买卖规则<br/>- 例如：止损线、止盈目标、加仓条件"]
+        F --> G["<b style='font-size:16px'>定期回顾与联合评估 (避免偏好逆转)</b><br/>- '如果今天我拥有的是现金, 我还会买入这只股票吗?'<br/>- 将持仓与新机会并列评估，打破现状偏见"]
+        G --> H{"业绩是否符合风险政策预期？"}
+        H -->|是| I["坚持并优化当前策略"]
+        H -->|否| J["分析偏差，修正风险政策或执行细节"]
+        J --> B
+        I --> F
+    end
+
+    %% Styling
+    style A fill:#e3f2fd,stroke:#333,stroke-width:2px
+    style B fill:#e8f5e9,stroke:#333,stroke-width:2px
+    style C fill:#fffde7,stroke:#333,stroke-width:2px
+    style D fill:#fffde7,stroke:#333,stroke-width:2px
+    style E fill:#ffebee,stroke:#333,stroke-width:2px
+    style F fill:#f3e5f5,stroke:#333,stroke-width:2px
+    style G fill:#f3e5f5,stroke:#333,stroke-width:2px
+    style H fill:#f3e5f5,stroke:#333,stroke-width:2px
+    style I fill:#e0f7fa,stroke:#333,stroke-width:2px
+    style J fill:#fce4ec,stroke:#333,stroke-width:2px

@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCG角色卡片 - 精美打印版</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0.5cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', Arial, sans-serif;
+            background: white;
+        }
+        
+        .page {
+            width: 20cm;
+            height: 28.7cm;
+            margin: 0 auto;
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 5cm);
+            grid-template-rows: repeat(2, 8cm);
+            gap: 0.2cm;
+            width: 10.2cm;
+            height: 16.2cm;
+            margin: 0 auto;
+            margin-top: 6cm;
+        }
+        
+        .card {
+            width: 5cm;
+            height: 8cm;
+            border: 2px solid #2c3e50;
+            border-radius: 0.3cm;
+            padding: 0.12cm;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            font-size: 7px;
+            line-height: 1.2;
+            overflow: hidden;
+            box-shadow: 0 0.1cm 0.3cm rgba(0,0,0,0.3);
+        }
+        
+        /* 卡片背景装饰 */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            background-size: 1cm 1cm;
+            background-repeat: repeat;
+            z-index: 0;
+        }
+        
+        .card > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-header {
+            text-align: center;
+            margin-bottom: 0.05cm;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 0.03cm;
+            background: rgba(255,255,255,0.9);
+            border-radius: 0.15cm 0.15cm 0 0;
+            margin: -0.15cm -0.15cm 0.05cm -0.15cm;
+            padding: 0.08cm 0.15cm 0.03cm 0.15cm;
+        }
+        
+        .card-title {
+            font-size: 9px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.02cm;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 6px;
+            color: #7f8c8d;
+        }
+        
+        .rarity {
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 8px;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+        }
+        
+        .card-type {
+            background: rgba(52, 73, 94, 0.8);
+            color: white;
+            padding: 0.02cm 0.05cm;
+            border-radius: 0.05cm;
+            font-size: 5px;
+            font-weight: bold;
+        }
+        
+        .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: rgba(255,255,255,0.95);
+            border-radius: 0.1cm;
+            padding: 0.08cm;
+            margin: 0.03cm 0;
+            justify-content: space-between;
+        }
+        
+        .summon-conditions {
+            margin-bottom: 0.05cm;
+            font-size: 8px;
+            background: rgba(236, 240, 241, 0.8);
+            padding: 0.04cm;
+            border-radius: 0.05cm;
+            border-left: 3px solid #3498db;
+            min-height: 0.9cm;
+        }
+        
+        .condition-title {
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 0.02cm;
+            font-size: 8px;
+        }
+        
+        .condition-item {
+            margin-left: 0.1cm;
+            margin-bottom: 0.01cm;
+            color: #34495e;
+            position: relative;
+            font-size: 8px;
+            display: inline-block;
+            margin-right: 0.08cm;
+        }
+        
+        .condition-item::before {
+            content: '◆';
+            position: absolute;
+            left: -0.08cm;
+            color: #3498db;
+            font-size: 6px;
+        }
+        
+        .conditions-row {
+            margin-left: 0.1cm;
+            margin-bottom: 0.01cm;
+            color: #34495e;
+            font-size: 8px;
+        }
+        
+        .attack-power {
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+            margin: 0.05cm 0;
+            padding: 0.06cm 0.05cm;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            border-radius: 0.1cm;
+            border: 1px solid #a93226;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+        
+        .attack-power::before {
+            content: '⚔ ';
+            font-size: 9px;
+        }
+        
+        .effects {
+            font-size: 8px;
+            margin-top: auto;
+        }
+        
+        .effect-title {
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.03cm;
+            font-size: 8px;
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            padding: 0.04cm 0.06cm;
+            border-radius: 0.08cm;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            border: 1px solid #7d3c98;
+            text-align: center;
+        }
+        
+        .effect-item {
+            margin-bottom: 0.04cm;
+            line-height: 1.3;
+            background: rgba(155, 89, 182, 0.05);
+            padding: 0.02cm;
+            border-radius: 0.03cm;
+            border-left: 2px solid #9b59b6;
+        }
+        
+        .effect-name {
+            font-weight: bold;
+            color: #8e44ad;
+            font-size: 8px;
+            display: block;
+            margin-bottom: 0.01cm;
+        }
+        
+        .effect-desc {
+            color: #2c3e50;
+            font-size: 7px;
+            line-height: 1.4;
+        }
+        
+        /* 星座系卡片 */
+        .card.constellation {
+            background: linear-gradient(135deg, #e8f4fd 0%, #b8e6b8 50%, #87ceeb 100%);
+            border-color: #3498db;
+        }
+        
+        .card.constellation::before {
+            background-image: 
+                radial-gradient(circle at 25% 25%, #3498db 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #2980b9 1px, transparent 1px);
+        }
+        
+        .card.constellation .card-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+        }
+        
+        .card.constellation .card-title {
+            color: white;
+        }
+        
+        /* 远古系卡片 */
+        .card.ancient {
+            background: linear-gradient(135deg, #fff3cd 0%, #f8d7da 50%, #ddd6fe 100%);
+            border-color: #d4a574;
+        }
+        
+        .card.ancient::before {
+            background-image: 
+                linear-gradient(45deg, #d4a574 25%, transparent 25%),
+                linear-gradient(-45deg, #d4a574 25%, transparent 25%);
+            background-size: 0.3cm 0.3cm;
+        }
+        
+        .card.ancient .card-header {
+            background: linear-gradient(135deg, #d4a574, #b8860b);
+            color: white;
+        }
+        
+        .card.ancient .card-title {
+            color: white;
+        }
+        
+        /* 现代系卡片 */
+        .card.modern {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+            border-color: #6c757d;
+        }
+        
+        .card.modern::before {
+            background-image: 
+                repeating-linear-gradient(45deg, #6c757d, #6c757d 1px, transparent 1px, transparent 0.2cm);
+        }
+        
+        .card.modern .card-header {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+        }
+        
+        .card.modern .card-title {
+            color: white;
+        }
+        
+        /* 魔法系卡片 */
+        .card.magic {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #ce93d8 100%);
+            border-color: #8e24aa;
+        }
+        
+        .card.magic::before {
+            background-image: 
+                radial-gradient(circle at 20% 80%, #8e24aa 1px, transparent 1px),
+                radial-gradient(circle at 80% 20%, #ab47bc 1px, transparent 1px),
+                radial-gradient(circle at 40% 40%, #ba68c8 0.5px, transparent 0.5px);
+            background-size: 0.5cm 0.5cm, 0.3cm 0.3cm, 0.8cm 0.8cm;
+        }
+        
+        .card.magic .card-header {
+            background: linear-gradient(135deg, #8e24aa, #7b1fa2);
+            color: white;
+        }
+        
+        .card.magic .card-title {
+            color: white;
+        }
+        
+        /* 稀有度样式 */
+        .rarity.rare-2::before { content: '★★ '; }
+        .rarity.rare-3::before { content: '★★★ '; }
+        .rarity.rare-4::before { content: '★★★★ '; }
+        .rarity.rare-5::before { content: '★★★★★ '; }
+        
+        /* 打印优化 */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .page {
+                margin: 0;
+            }
+            
+            .card {
+                box-shadow: none;
+            }
+        }
+        
+        /* 角落装饰 */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0.1cm;
+            right: 0.1cm;
+            width: 0.3cm;
+            height: 0.3cm;
+            background: radial-gradient(circle, rgba(255,255,255,0.8), transparent);
+            border-radius: 50%;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- 第一页 -->
+    <div class="page">
+        <div class="grid">
+            <!-- 双子座·赫尔墨斯 -->
+            <div class="card constellation">
+                <div class="card-header">
+                    <div class="card-title">双子座·赫尔墨斯</div>
+                    <div class="card-stats">
+                        <span class="card-type">星座系</span>
+                        <span class="rarity rare-2">★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">魂：≥1草花</span>
+                            <span class="condition-item">阵型：含对子</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：2</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【共生召唤】</span>
+                            <span class="effect-desc">可在对手回合召唤在已有战魂的阵型上</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【双重干扰-对子】</span>
+                            <span class="effect-desc">进场时，可选择对手场上一个战魂，使其本回合无法攻击</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 天蝎座·阿瑞斯 -->
+            <div class="card constellation">
+                <div class="card-header">
+                    <div class="card-title">天蝎座·阿瑞斯</div>
+                    <div class="card-stats">
+                        <span class="card-type">星座系</span>
+                        <span class="rarity rare-3">★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">魂：≥2草花</span>
+                            <span class="condition-item">阵型：含三张</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：1</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【毒性攻击】</span>
+                            <span class="effect-desc">攻击战魂时，对方战魂附上中毒标志（每回合防御力-1）</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【剧毒飞刺】</span>
+                            <span class="effect-desc">一回合一次，消耗1张黑桃手牌，给对方战魂附上一枚中毒标志</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 射手座·阿尔忒弥斯 -->
+            <div class="card constellation">
+                <div class="card-header">
+                    <div class="card-title">射手座·阿尔忒弥斯</div>
+                    <div class="card-stats">
+                        <span class="card-type">星座系</span>
+                        <span class="rarity rare-2">★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">魂：≥1草花</span>
+                            <span class="condition-item">阵型：1-3魂</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：2</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【星光射击】</span>
+                            <span class="effect-desc">消耗一张方块手牌，获得迅捷效果（无视对方战魂直接攻击玩家）</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【连环射击】</span>
+                            <span class="effect-desc">一回合一次，攻击对方战魂并击败后，可额外增加一次基本攻击</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 远古·成汤 -->
+            <div class="card ancient">
+                <div class="card-header">
+                    <div class="card-title">远古·成汤</div>
+                    <div class="card-stats">
+                        <span class="card-type">远古系</span>
+                        <span class="rarity rare-3">★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">魂：无</span>
+                            <span class="condition-item">阵型：炸弹或同花顺</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：1</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【桑林祈雨】</span>
+                            <span class="effect-desc">扣除2魂，可以从弃牌区选择2张魂牌重新盖覆部署到场上</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【汤武革命】</span>
+                            <span class="effect-desc">己方场上每有一个含黑桃且4魂以上的灵魂阵地，成汤攻击力+1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 第二页 -->
+    <div class="page">
+        <div class="grid">
+            <!-- 远古·李广 -->
+            <div class="card ancient">
+                <div class="card-header">
+                    <div class="card-title">远古·李广</div>
+                    <div class="card-stats">
+                        <span class="card-type">远古系</span>
+                        <span class="rarity rare-4">★★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">魂：至少一张黑桃</span>
+                            <span class="condition-item">阵型：同花或顺子</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：3</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【虎口脱险】</span>
+                            <span class="effect-desc">游戏内一次，被破坏时可从手牌选择1红心作为灵魂阵地，重新召唤李广</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【引敌深入】</span>
+                            <span class="effect-desc">消耗1张红心手牌发动，该回合对方需优先攻击李广</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 远古·孙膑 -->
+            <div class="card ancient">
+                <div class="card-header">
+                    <div class="card-title">远古·孙膑</div>
+                    <div class="card-stats">
+                        <span class="card-type">远古系</span>
+                        <span class="rarity rare-3">★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">魂：无</span>
+                            <span class="condition-item">阵型：含三张</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：2</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【围魏救赵】</span>
+                            <span class="effect-desc">进场时，可以整理场上1张黑桃单牌视为大小王盖覆至其他灵魂区域</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【兵法韬略】</span>
+                            <span class="effect-desc">受到攻击时，直接反伤（不必先结算对方伤害）</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 铁苹果爵士 -->
+            <div class="card modern">
+                <div class="card-header">
+                    <div class="card-title">铁苹果爵士</div>
+                    <div class="card-stats">
+                        <span class="card-type">现代系</span>
+                        <span class="rarity rare-2">★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">魂：≥1红心</span>
+                            <span class="condition-item">阵型：同花或顺子</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：2</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【苹果砸头】</span>
+                            <span class="effect-desc">消耗1张红心手牌，将对方召唤3魂以下战魂移回其准备区</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【吃个苹果】</span>
+                            <span class="effect-desc">一回合一次，消耗2魂，对方下回合跳过攻击阶段</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 赤色工程师 -->
+            <div class="card modern">
+                <div class="card-header">
+                    <div class="card-title">赤色工程师</div>
+                    <div class="card-stats">
+                        <span class="card-type">现代系</span>
+                        <span class="rarity rare-2">★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">魂：≥2红心</span>
+                            <span class="condition-item">阵型：无</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：1</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【系统壁垒】</span>
+                            <span class="effect-desc">每消耗一张手牌，使自身任一战魂防御值+1</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【东风快递】</span>
+                            <span class="effect-desc">一回合一次，消耗2魂，选定对方战魂，扣除战魂3防御</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 第三页 -->
+    <div class="page">
+        <div class="grid">
+            <!-- 相对论博士 E=MC² -->
+            <div class="card modern">
+                <div class="card-header">
+                    <div class="card-title">相对论博士 E=MC²</div>
+                    <div class="card-stats">
+                        <span class="card-type">现代系</span>
+                        <span class="rarity rare-4">★★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">元素：无</span>
+                            <span class="condition-item">位数：≥4魂</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：1</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【时空漫步】</span>
+                            <span class="effect-desc">进场时，消耗1张红心手牌，与对方互换一块灵魂阵地</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【质能爆发】</span>
+                            <span class="effect-desc">一回合一次，消耗1魂，本回合己方所有战魂攻击＋1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 梦境贤者 -->
+            <div class="card magic">
+                <div class="card-header">
+                    <div class="card-title">梦境贤者</div>
+                    <div class="card-stats">
+                        <span class="card-type">魔法系</span>
+                        <span class="rarity rare-3">★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">元素：≥1方块</span>
+                            <span class="condition-item">位数：含对子</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：2</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【回梦引】</span>
+                            <span class="effect-desc">进场时，从弃牌堆选择1张魂牌转移到任一灵魂阵地</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【圣光术】</span>
+                            <span class="effect-desc">在你的回合中，黑桃可视为红心，梅花可视为方块</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 大召唤师 -->
+            <div class="card magic">
+                <div class="card-header">
+                    <div class="card-title">大召唤师</div>
+                    <div class="card-stats">
+                        <span class="card-type">魔法系</span>
+                        <span class="rarity rare-5">★★★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">元素：无</span>
+                            <span class="condition-item">位数：≥5魂</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：1</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【元素召唤】</span>
+                            <span class="effect-desc">每消耗1张红色手牌，从弃牌区抽取1张魂牌</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【次元降临】</span>
+                            <span class="effect-desc">进场时，可消耗1张红色手牌，额外抽一个战魂卡放到准备区</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 暗影刺客 -->
+            <div class="card magic">
+                <div class="card-header">
+                    <div class="card-title">暗影刺客</div>
+                    <div class="card-stats">
+                        <span class="card-type">魔法系</span>
+                        <span class="rarity rare-4">★★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="conditions-row">
+                            <span class="condition-item">元素：无</span>
+                            <span class="condition-item">位数：仅炸弹</span>
+                        </div>
+                    </div>
+                    <div class="attack-power">攻击力：3</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name">【暗光一闪】</span>
+                            <span class="effect-desc">进场时，可破坏对方1个已召唤的战魂</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name">【影子隐匿】</span>
+                            <span class="effect-desc">被攻击后破坏</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCG空白卡片模板</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0.5cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', Arial, sans-serif;
+            background: white;
+        }
+        
+        .page {
+            width: 20cm;
+            height: 28.7cm;
+            margin: 0 auto;
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 5cm);
+            grid-template-rows: repeat(2, 8cm);
+            gap: 0.2cm;
+            width: 10.2cm;
+            height: 16.2cm;
+            margin: 0 auto;
+            margin-top: 6cm;
+        }
+        
+        .card {
+            width: 5cm;
+            height: 8cm;
+            border: 2px solid #2c3e50;
+            border-radius: 0.3cm;
+            padding: 0.12cm;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            font-size: 7px;
+            line-height: 1.2;
+            overflow: hidden;
+            box-shadow: 0 0.1cm 0.3cm rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+        }
+        
+        .card-header {
+            text-align: center;
+            margin-bottom: 0.05cm;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 0.03cm;
+            background: linear-gradient(135deg, #6c757d, #495057);
+            border-radius: 0.15cm 0.15cm 0 0;
+            margin: -0.15cm -0.15cm 0.05cm -0.15cm;
+            padding: 0.08cm 0.15cm 0.03cm 0.15cm;
+            color: white;
+        }
+        
+        .card-title {
+            font-size: 9px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.02cm;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            border: 1px dashed rgba(255,255,255,0.5);
+            padding: 0.1cm;
+            min-height: 0.6cm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 6px;
+            color: #f8f9fa;
+        }
+        
+        .card-type {
+            background: rgba(52, 73, 94, 0.8);
+            color: white;
+            padding: 0.02cm 0.05cm;
+            border-radius: 0.05cm;
+            font-size: 5px;
+            font-weight: bold;
+        }
+        
+        .rarity {
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 8px;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+        }
+        
+        .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: rgba(255,255,255,0.95);
+            border-radius: 0.1cm;
+            padding: 0.08cm;
+            margin: 0.03cm 0;
+            justify-content: space-between;
+        }
+        
+        .summon-conditions {
+            margin-bottom: 0.05cm;
+            font-size: 8px;
+            background: rgba(236, 240, 241, 0.8);
+            padding: 0.04cm;
+            border-radius: 0.05cm;
+            border-left: 3px solid #3498db;
+            min-height: 0.9cm;
+        }
+        
+        .condition-title {
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 0.02cm;
+            font-size: 8px;
+        }
+        
+        .condition-item {
+            margin-left: 0.1cm;
+            margin-bottom: 0.01cm;
+            color: #34495e;
+            position: relative;
+            border: 1px dashed #bdc3c7;
+            padding: 0.05cm;
+            min-height: 0.3cm;
+            font-size: 8px;
+        }
+        
+        .attack-power {
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+            margin: 0.05cm 0;
+            padding: 0.06cm 0.05cm;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            border-radius: 0.1cm;
+            border: 1px solid #a93226;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+            border: 2px dashed rgba(255,255,255,0.7);
+            flex-shrink: 0;
+        }
+        
+        .attack-power::before {
+            content: '⚔ ';
+            font-size: 9px;
+        }
+        
+        .effects {
+            font-size: 8px;
+            min-height: 3cm;
+            margin-top: auto;
+        }
+        
+        .effect-title {
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.03cm;
+            font-size: 8px;
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            padding: 0.04cm 0.06cm;
+            border-radius: 0.08cm;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            border: 1px solid #7d3c98;
+            text-align: center;
+        }
+        
+        .effect-item {
+            margin-bottom: 0.04cm;
+            line-height: 1.3;
+            background: rgba(155, 89, 182, 0.05);
+            padding: 0.02cm;
+            border-radius: 0.03cm;
+            border-left: 2px solid #9b59b6;
+            min-height: 0.8cm;
+            border: 1px dashed #bdc3c7;
+        }
+        
+        .effect-name {
+            font-weight: bold;
+            color: #8e44ad;
+            font-size: 8px;
+            display: block;
+            margin-bottom: 0.01cm;
+            border: 1px dashed rgba(142, 68, 173, 0.3);
+            padding: 0.02cm;
+            min-height: 0.3cm;
+        }
+        
+        .effect-desc {
+            color: #2c3e50;
+            font-size: 7px;
+            line-height: 1.4;
+            border: 1px dashed rgba(44, 62, 80, 0.3);
+            padding: 0.02cm;
+            min-height: 0.4cm;
+        }
+        
+        /* 打印优化 */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .page {
+                margin: 0;
+            }
+            
+            .card {
+                box-shadow: none;
+            }
+        }
+        
+        /* 填写说明 */
+        .placeholder {
+            color: #95a5a6;
+            font-style: italic;
+            text-align: center;
+            opacity: 0.7;
+        }
+        
+        /* 魔法系卡片样式（可选） */
+        .card.magic {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #ce93d8 100%);
+            border-color: #8e24aa;
+        }
+        
+        .card.magic::before {
+            background-image: 
+                radial-gradient(circle at 20% 80%, #8e24aa 1px, transparent 1px),
+                radial-gradient(circle at 80% 20%, #ab47bc 1px, transparent 1px),
+                radial-gradient(circle at 40% 40%, #ba68c8 0.5px, transparent 0.5px);
+            background-size: 0.5cm 0.5cm, 0.3cm 0.3cm, 0.8cm 0.8cm;
+        }
+        
+        .card.magic .card-header {
+            background: linear-gradient(135deg, #8e24aa, #7b1fa2);
+            color: white;
+        }
+        
+        .card.magic .card-title {
+            color: white;
+        }
+        
+        /* 角落装饰 */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0.1cm;
+            right: 0.1cm;
+            width: 0.3cm;
+            height: 0.3cm;
+            background: radial-gradient(circle, rgba(255,255,255,0.8), transparent);
+            border-radius: 50%;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="grid">
+            <!-- 空白卡片模板 1 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title placeholder">角色名称</div>
+                    <div class="card-stats">
+                        <span class="card-type placeholder">系列</span>
+                        <span class="rarity placeholder">★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="condition-item placeholder">魂条件</div>
+                        <div class="condition-item placeholder">阵型条件</div>
+                    </div>
+                    <div class="attack-power placeholder">攻击力：?</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name placeholder">【技能名称】</span>
+                            <span class="effect-desc placeholder">技能描述</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name placeholder">【技能名称】</span>
+                            <span class="effect-desc placeholder">技能描述</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 空白卡片模板 2 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title placeholder">角色名称</div>
+                    <div class="card-stats">
+                        <span class="card-type placeholder">系列</span>
+                        <span class="rarity placeholder">★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="condition-item placeholder">魂条件</div>
+                        <div class="condition-item placeholder">阵型条件</div>
+                    </div>
+                    <div class="attack-power placeholder">攻击力：?</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name placeholder">【技能名称】</span>
+                            <span class="effect-desc placeholder">技能描述</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name placeholder">【技能名称】</span>
+                            <span class="effect-desc placeholder">技能描述</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 空白卡片模板 3 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title placeholder">角色名称</div>
+                    <div class="card-stats">
+                        <span class="card-type placeholder">系列</span>
+                        <span class="rarity placeholder">★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="condition-item placeholder">魂条件</div>
+                        <div class="condition-item placeholder">阵型条件</div>
+                    </div>
+                    <div class="attack-power placeholder">攻击力：?</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name placeholder">【技能名称】</span>
+                            <span class="effect-desc placeholder">技能描述</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name placeholder">【技能名称】</span>
+                            <span class="effect-desc placeholder">技能描述</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 空白卡片模板 4 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title placeholder">角色名称</div>
+                    <div class="card-stats">
+                        <span class="card-type placeholder">系列</span>
+                        <span class="rarity placeholder">★★★</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summon-conditions">
+                        <div class="condition-title">🎯 召唤条件</div>
+                        <div class="condition-item placeholder">魂条件</div>
+                        <div class="condition-item placeholder">阵型条件</div>
+                    </div>
+                    <div class="attack-power placeholder">攻击力：?</div>
+                    <div class="effects">
+                        <div class="effect-title">✨ 技能效果</div>
+                        <div class="effect-item">
+                            <span class="effect-name placeholder">【技能名称】</span>
+                            <span class="effect-desc placeholder">技能描述</span>
+                        </div>
+                        <div class="effect-item">
+                            <span class="effect-name placeholder">【技能名称】</span>
+                            <span class="effect-desc placeholder">技能描述</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

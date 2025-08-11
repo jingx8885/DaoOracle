@@ -1,0 +1,120 @@
+### 关键要点
+- 研究表明，阵风飞机可能与波音的F/A-18E/F Super Hornet对标，但具体选择取决于任务需求。
+- PL-15导弹似乎与雷神公司的AIM-120 AMRAAM对标，射程和性能相似。
+- CM-400AKG导弹可能与波音的Harpoon对标，尽管速度上有所不同。
+- HD-1A导弹的美国对标可能是雷神公司的Tomahawk，角色上类似但速度不同。
+- 这些对标存在争议，尤其涉及军售和地缘政治影响。
+
+---
+
+### 阵风飞机的对标
+阵风（Rafale）是法国达索航空的多用途战斗机，适合空军和海军任务。研究显示，它最可能与**波音公司**的**F/A-18E/F Super Hornet**对标，因为两者都是4.5代多用途战斗机，能在航母上起降，且在国际采购中常被直接比较。例如，印度海军曾对比两者，最终选择了阵风 ([Rafale vs F/A-18 Super Hornet: A Fighter Jet Showdown](https://simpleflying.com/boeing-f-a-18-superhornet-vs-dassault-rafale-fighter-jet-showdown/))。
+
+---
+
+### PL-15导弹的对标
+PL-15是中国远程空对空导弹，射程150-300公里。证据显示，它与**雷神公司（RTX的一部分）**的**AIM-120 AMRAAM**对标，因为两者都是超视距空对空导弹，性能接近。美国甚至因PL-15而研发AIM-260 JATM，表明其威胁性 ([PL-15 - Wikipedia](https://en.wikipedia.org/wiki/PL-15))。
+
+---
+
+### CM-400AKG导弹的对标
+CM-400AKG是超音速反舰导弹，射程200-300公里。研究表明，它可能与**波音公司**的**Harpoon**对标，尽管CM-400AKG是超音速，而Harpoon是亚音速，但两者在反舰任务上角色相似 ([The JF-17’s air-launched rocket (CM-400AKG)](https://quwa.org/quwa-premium-sample/the-jf-17s-air-launched-rocket-option-cm-400akg/))。
+
+---
+
+### HD-1A导弹的对标
+HD-1A是超音速陆地攻击和反舰导弹，射程约290公里。由于美国无现役超音速类似导弹，研究显示，它可能与**雷神公司（RTX的一部分）**的**Tomahawk**对标，Tomahawk主要用于陆地攻击，角色上类似但速度不同 ([HD-1 - Wikipedia](https://en.wikipedia.org/wiki/HD-1))。
+
+---
+
+---
+
+### 调查笔记
+
+#### 阵风飞机的对标分析
+阵风（Rafale）是法国达索航空公司（Dassault Aviation）生产的多用途战斗机，属于4.5代战斗机，具备空中优势、地面攻击和反舰任务能力。研究表明，其主要美国对标飞机是**波音公司（Boeing）**的**F/A-18E/F Super Hornet**，以下是详细分析：
+
+- **性能比较**：
+  - 阵风和F/A-18 Super Hornet都是双发多用途战斗机，均有海军版本（阵风M和F/A-18E/F），能在航母上起降。
+  - 根据[Simple Flying](https://simpleflying.com/boeing-f-a-18-superhornet-vs-dassault-rafale-fighter-jet-showdown/)，阵风在速度、爬升率和服务上限上可能略优，但F/A-18 Super Hornet在成本和维护性上更具优势。
+  - [Hush-Kit](https://hushkit.net/2019/12/20/dassault-rafale-m-versus-f-a-18e-f-super-hornet-carrier-fighters-compared/)提供详细对比，指出两者在航母操作中表现相似，均配备AESA雷达。
+
+- **市场竞争**：
+  - 在国际采购中，阵风常与F/A-18 Super Hornet竞争。例如，印度海军的MRCBF项目曾对比两者，最终于2025年4月28日签署26架阵风M F4型合同，价值超过750亿美元 ([Army Recognition](https://armyrecognition.com/news/aerospace-news/2025/focus-is-the-french-rafale-fighter-jet-a-real-alternative-to-the-us-made-f-35-portugal-planned-to-purchase))。
+  - 其他国家如卡塔尔和巴西也曾将阵风与F/A-18 Super Hornet并列评估 ([Dassault Rafale - Wikipedia](https://en.wikipedia.org/wiki/Dassault_Rafale))。
+
+- **其他可能对标**：
+  - 阵风有时被与**洛克希德·马丁（Lockheed Martin）**的F-16或F-15E比较，但F-16是4代机，F-15E虽为多用途战斗机，但技术现代化程度不如阵风。
+  - 与F-35的比较更多见于市场竞争，但F-35是5代隐形战斗机，阵风缺乏隐形设计，因此技术层次不同 ([Simple Flying](https://simpleflying.com/f-35-lightning-ii-vs-dassault-rafale/))。
+
+因此，阵风的主要美国对标是**波音公司的F/A-18E/F Super Hornet**，尤其在海军任务中。
+
+#### PL-15导弹的对标分析
+PL-15（霹雳-15）是中国远程空对空导弹，射程150-300公里，属于超视距空对空导弹（BVRAAM），主要装备于歼-10C、歼-16和歼-20等战斗机。
+
+- **末端制导技术**：
+  - PL-15采用主动雷达寻的系统，使用小型AESA雷达，抗干扰能力强，适合打击高速移动目标 ([PL-15 - Wikipedia](https://en.wikipedia.org/wiki/PL-15))。
+  - 中段使用惯性导航和北斗卫星导航，末端转为自主雷达导引，确保高精度 ([PL-15 air-to-air missile - Army Recognition](https://armyrecognition.com/military-products/army/missiles/tactical-missiles/pl-15-air-to-air-missile))。
+
+- **对标武器**：
+  - 研究显示，PL-15与**雷神公司（Raytheon，现在为RTX的一部分）**的**AIM-120 AMRAAM**对标，AIM-120D射程约180公里，性能接近 ([PL-15 - Wikipedia](https://en.wikipedia.org/wiki/PL-15))。
+  - 美国因PL-15的威胁而研发AIM-260 JATM，表明PL-15在射程和性能上被视为竞争者 ([PL-15 air-to-air missile - Army Recognition](https://armyrecognition.com/military-products/army/missiles/tactical-missiles/pl-15-air-to-air-missile))。
+
+- **市场影响**：
+  - PL-15的出口版本PL-15E于2021年珠海航展展示，巴基斯坦使用PL-15E对抗印度，显示其在南亚地区的战略重要性 ([Chinese-Made PL-15 Air-To-Air Missile Components Came Down Intact Inside India](https://www.twz.com/air/parts-of-a-pakistani-pl-15e-air-to-air-missile-came-down-relatively-intact-in-india-after-air-battle))。
+
+因此，PL-15的对标是**雷神公司的AIM-120 AMRAAM**。
+
+#### CM-400AKG导弹的对标分析
+CM-400AKG是中国超音速反舰导弹，射程200-300公里，设计用于打击高价值目标如航空母舰，主要装备于巴基斯坦的JF-17战斗机。
+
+- **末端制导技术**：
+  - CM-400AKG采用主动雷达、被动雷达和成像红外（IIR）制导，具备目标识别能力，适合攻击固定或慢速移动目标 ([Overview — CM-400AKG anti-ship missile — Anti-Ship — Missiles/Rockets/Bombs — Weapons — Military Periscope](https://www.militaryperiscope.com/weapons/missilesrocketsbombs/anti-ship/cm-400akg-anti-ship-missile/overview/))。
+  - 末端阶段速度可达Mach 5.5，采用高弹道飞行轨迹 ([Who Wins? Pakistan’s Anti-Ship CM-400AKG Missile vs. India’s Aircraft Carriers?](https://nationalinterest.org/blog/reboot/who-wins-pakistans-anti-ship-cm-400akg-missile-vs-indias-aircraft-carriers-176812))。
+
+- **对标武器**：
+  - 研究显示，CM-400AKG可能与**波音公司**的**Harpoon**对标，Harpoon是美国主要反舰导弹，射程约130公里 ([Harpoon (missile) - Wikipedia](https://en.wikipedia.org/wiki/Harpoon_%28missile%29))。
+  - 尽管CM-400AKG是超音速，而Harpoon是亚音速，但两者在反舰任务上角色相似，CM-400AKG常与Harpoon等亚音速导弹结合使用 ([The JF-17’s air-launched rocket (CM-400AKG)](https://quwa.org/quwa-premium-sample/the-jf-17s-air-launched-rocket-option-cm-400akg/))。
+
+- **市场影响**：
+  - CM-400AKG的出口增强了巴基斯坦的区域拒止能力，但可能加剧印巴紧张局势 ([Pakistan’s Carrier Killer: CM-400AKG](https://pakstrategic.com/pakistans-carrier-killer-cm-400akg/))。
+
+因此，CM-400AKG的对标是**波音公司的Harpoon**。
+
+#### HD-1A导弹的对标分析
+HD-1A是广东宏大矿业公司开发的超音速陆地攻击和反舰导弹，射程约290公里，末端制导采用雷达和红外制导。
+
+- **末端制导技术**：
+  - HD-1A使用雷达和红外成像传感器（IIR）制导，精度可达10米，适合复杂环境 ([DSA 2024: China Displays HD-1 and HD-1A Supersonic Missile in Malaysia](https://armyrecognition.com/news/army-news/army-news-2024/dsa-2024-china-displays-hd-1-and-hd-1a-supersonic-missile-in-malaysia))。
+  - 中段使用惯性导航和卫星导航，确保进入末端制导的准确性 ([HD-1 | Military Wiki | Fandom](https://military-history.fandom.com/wiki/HD-1))。
+
+- **对标武器**：
+  - 由于美国无现役超音速陆地攻击导弹，HD-1A可能与**雷神公司（RTX的一部分）**的**Tomahawk**对标，Tomahawk射程1600公里，主要用于陆地攻击 ([List of active missiles of the United States military - Wikipedia](https://en.wikipedia.org/wiki/List_of_active_missiles_of_the_United_States_military))。
+  - HD-1A兼具反舰能力，与Tomahawk的角色类似，但Tomahawk是亚音速，速度上存在差异 ([HD-1 - Wikipedia](https://en.wikipedia.org/wiki/HD-1))。
+
+- **市场影响**：
+  - HD-1A在2024年马来西亚防务展展示，显示其国际市场潜力，但军售可能引发地缘政治争议 ([DSA 2024: China Displays HD-1 and HD-1A Supersonic Missile in Malaysia](https://armyrecognition.com/news/army-news/army-news-2024/dsa-2024-china-displays-hd-1-and-hd-1a-supersonic-missile-in-malaysia))。
+
+因此，HD-1A的对标是**雷神公司的Tomahawk**。
+
+#### 财务与争议
+- 阵风的出口（如印度）提升了达索航空的全球影响力，但军售伦理引发争议。
+- PL-15和CM-400AKG的出口（如巴基斯坦）可能加剧地区紧张，涉及地缘政治影响。
+- HD-1A的潜在出口显示中国军工扩展，但军售争议同样存在。
+
+#### 关键引文
+- [Rafale vs F/A-18 Super Hornet: A Fighter Jet Showdown](https://simpleflying.com/boeing-f-a-18-superhornet-vs-dassault-rafale-fighter-jet-showdown/)
+- [PL-15 - Wikipedia](https://en.wikipedia.org/wiki/PL-15)
+- [PL-15 air-to-air missile - Army Recognition](https://armyrecognition.com/military-products/army/missiles/tactical-missiles/pl-15-air-to-air-missile)
+- [Chinese-Made PL-15 Air-To-Air Missile Components Came Down Intact Inside India](https://www.twz.com/air/parts-of-a-pakistani-pl-15e-air-to-air-missile-came-down-relatively-intact-in-india-after-air-battle)
+- [Overview — CM-400AKG anti-ship missile — Anti-Ship — Missiles/Rockets/Bombs — Weapons — Military Periscope](https://www.militaryperiscope.com/weapons/missilesrocketsbombs/anti-ship/cm-400akg-anti-ship-missile/overview/)
+- [Who Wins? Pakistan’s Anti-Ship CM-400AKG Missile vs. India’s Aircraft Carriers?](https://nationalinterest.org/blog/reboot/who-wins-pakistans-anti-ship-cm-400akg-missile-vs-indias-aircraft-carriers-176812)
+- [The JF-17’s air-launched rocket (CM-400AKG)](https://quwa.org/quwa-premium-sample/the-jf-17s-air-launched-rocket-option-cm-400akg/)
+- [Harpoon (missile) - Wikipedia](https://en.wikipedia.org/wiki/Harpoon_%28missile%29)
+- [HD-1 - Wikipedia](https://en.wikipedia.org/wiki/HD-1)
+- [DSA 2024: China Displays HD-1 and HD-1A Supersonic Missile in Malaysia](https://armyrecognition.com/news/army-news/army-news-2024/dsa-2024-china-displays-hd-1-and-hd-1a-supersonic-missile-in-malaysia)
+- [HD-1 | Military Wiki | Fandom](https://military-history.fandom.com/wiki/HD-1)
+- [List of active missiles of the United States military - Wikipedia](https://en.wikipedia.org/wiki/List_of_active_missiles_of_the_United_States_military)
+- [Dassault Rafale - Wikipedia](https://en.wikipedia.org/wiki/Dassault_Rafale)
+- [Simple Flying F-35 vs. Rafale Comparison](https://simpleflying.com/f-35-lightning-ii-vs-dassault-rafale/)
+- [Army Recognition Rafale vs F-35 for Portugal](https://armyrecognition.com/news/aerospace-news/2025/focus-is-the-french-rafale-fighter-jet-a-real-alternative-to-the-us-made-f-35-portugal-planned-to-purchase)
